@@ -56,7 +56,6 @@ public class JobData {
     /**
      * Returns results of search the jobs data by key/value, using
      * inclusion of the search term.
-     *
      * For example, searching for employer "Enterprise" will include results
      * with "Enterprise Holdings, Inc".
      *
@@ -99,7 +98,7 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
             for (String column : row.keySet()) {
                 String columnValue = row.get(column).toLowerCase();
-                if (columnValue.toLowerCase().contains(value.toLowerCase())) {
+                if (columnValue.contains(value.toLowerCase())) {
                     if (!jobs.contains(row)) {
                         jobs.add(row);
                     }

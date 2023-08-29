@@ -20,6 +20,21 @@ public class JobData {
 
     private static ArrayList<HashMap<String, String>> allJobs;
 
+    public static void printJobs(ArrayList<HashMap<String, String>> jobs) {
+        if (jobs.isEmpty()) {
+            System.out.println("No Results");
+            return;
+        }
+
+        for (HashMap<String, String> job : jobs) {
+            System.out.println("*****");
+            for (String key : job.keySet()) {
+                System.out.println(key + ": " + job.get(key));
+            }
+            System.out.println("*****\n");
+        }
+    }
+
     /**
      * Fetch list of all values from loaded data,
      * without duplicates, for a given column.
